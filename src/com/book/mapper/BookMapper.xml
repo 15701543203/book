@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.mapper.BookMapper">
+	<select id="selectBookContent" parameterType="com.book.bean.Book" resultType="String">
+		select content  from  bookinfo where id=#{id}
+	</select>
+	
+	
+	
+	<select id="selectPaginatedChapters" parameterType="map" resultMap="chaptersMap">
+		select id,chapter,content,oldprice,nowprice,ischarge from bookinfo limit #{delta}, #{size}
+	</select>
+	<resultMap type="com.book.bean.Book" id="chaptersMap">
+		<id column="" property="" />
+		<result column="id" property="id" />
+		<result column="chapter" property="chapter" />
+		<result column="content" property="content" />
+		<result column="oldprice" property="oldPrice" />
+		<result column="newprice" property="newPrice" />
+		<result column="ischarge" property="isCharge" />
+	</resultMap>
+
+
+	<select id="selectChaptersSum" resultType="int">
+		select count(id) from bookinfo
+	</select>
+
+</mapper>
