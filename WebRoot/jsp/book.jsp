@@ -85,20 +85,20 @@
 		<table align="center">
 					<tr>
 						<td bgcolor="#00ffff" colspan="10" align="center">共${pager.totalPage}页 &nbsp;&nbsp;共${pager.totalRows}章
-							&nbsp;&nbsp;<a href="/book/getPagerBook.do?page=1">首页</a> 
+							&nbsp;&nbsp;<a href="/book/chapter.do?page=1">首页</a> 
 							<c:choose>
 								<c:when test="${pager.currenPage-1==0}">&nbsp;&nbsp;上一页</c:when>
 								<c:when test="${pager.currenPage-1>0}">
-									<a href="/book/getPagerBook.do?page=${pager.currenPage-1}">&nbsp;&nbsp;上一页</a>
+									<a href="/book/chapter.do?page=${pager.currenPage-1}">&nbsp;&nbsp;上一页</a>
 								</c:when>
 							</c:choose>
 							 <c:choose>
 								<c:when test="${pager.currenPage+1>pager.totalPage}">&nbsp;&nbsp;下一页</c:when>
 								<c:when test="${pager.currenPage+1<=pager.totalPage}">
-									<a href="/book/getPagerBook.do?page=${pager.currenPage+1}">&nbsp;&nbsp;下一页</a>
+									<a href="/book/chapter.do?page=${pager.currenPage+1}">&nbsp;&nbsp;下一页</a>
 								</c:when>
 							</c:choose> 
-							<a href="/book/getPagerBook.do?page=${pager.totalPage}">&nbsp;&nbsp;末页</a>
+							<a href="/book/chapter.do?page=${pager.totalPage}">&nbsp;&nbsp;末页</a>
 						</td>
 					</tr>
 				</table>
